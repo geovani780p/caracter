@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador y Reemplazador de Texto</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-search"></i> Buscador y Reemplazador de Texto</h1>
+            <p>Busca y reemplaza palabras, letras o caracteres en tu texto de manera fácil y visual</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <div class="input-group">
+                    <label for="inputText">
+                        <i class="fas fa-edit"></i> Texto Original
+                    </label>
+                    <textarea 
+                        id="inputText" 
+                        placeholder="Escribe o pega aquí el texto que deseas modificar..."
+                        rows="8"
+                    ></textarea>
+                </div>
+
+                <div class="controls">
+                    <div class="search-controls">
+                        <div class="input-group">
+                            <label for="searchTerm">
+                                <i class="fas fa-search"></i> Buscar
+                            </label>
+                            <input 
+                                type="text" 
+                                id="searchTerm" 
+                                placeholder="Palabra, letra o carácter a buscar"
+                            >
+                        </div>
+
+                        <div class="input-group">
+                            <label for="replaceTerm">
+                                <i class="fas fa-exchange-alt"></i> Reemplazar con
+                            </label>
+                            <input 
+                                type="text" 
+                                id="replaceTerm" 
+                                placeholder="Nuevo texto de reemplazo"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button id="searchBtn" class="btn btn-primary">
+                            <i class="fas fa-search"></i> Buscar
+                        </button>
+                        <button id="replaceBtn" class="btn btn-success">
+                            <i class="fas fa-exchange-alt"></i> Reemplazar
+                        </button>
+                        <button id="clearBtn" class="btn btn-secondary">
+                            <i class="fas fa-trash"></i> Limpiar
+                        </button>
+                    </div>
+
+                    <div class="options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="caseSensitive">
+                            <span class="checkmark"></span>
+                            Distinguir mayúsculas y minúsculas
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="wholeWord">
+                            <span class="checkmark"></span>
+                            Solo palabras completas
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="results-section">
+                <div class="stats">
+                    <div class="stat-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <span id="matchCount">0</span> coincidencias encontradas
+                    </div>
+                </div>
+
+                <div class="output-container">
+                    <div class="output-group">
+                        <h3><i class="fas fa-eye"></i> Texto con Coincidencias Resaltadas</h3>
+                        <div id="highlightedText" class="output-text highlighted-output"></div>
+                    </div>
+
+                    <div class="output-group">
+                        <h3><i class="fas fa-check-circle"></i> Texto Modificado</h3>
+                        <div id="modifiedText" class="output-text modified-output"></div>
+                        <button id="copyBtn" class="btn btn-copy" style="display: none;">
+                            <i class="fas fa-copy"></i> Copiar Texto
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p></p>
+            <p>
+                <a href="https://github.com/leonardo/text-search-replace" target="_blank">
+                    <i class="fab fa-github"></i> Ver en GitHub
+                </a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
